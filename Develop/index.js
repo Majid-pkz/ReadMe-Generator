@@ -50,18 +50,52 @@ const questions = [
         name:'github',
     }];
 
-  
+    const generateMdContent=   ({ title, description, motivation,license,contribute,github})=>
 
-//  a function to write README file
-function writeToFile(fileName, data) {   
+    `# ${title} \n 
+    \n---\n
+    \n## Description\n    
+    \n ${description}\n  
+    \n---\n  
+    \n### Usage\n
+    \n${motivation}\n
+    \n---\n
+    \n### License\n
+    \n${license}\n
+    \n---\n
+    \n### Contributors\n
+    \n${contribute}\n  
+    \n---\n  
+    \n### where to find it \n
+    \n ${github}     
+    `;
+
+    inquirer.prompt(questions).then ((answers) =>{
+
+         const mdContent=generateMdContent(answers);
+        fs.writeFile(`README.md`, mdContent, (err) => 
+        err ? console.log(err) : console.log('Successfully createdReadme File!')
+          );
+       
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
     
-}
 
 // TODO: Create a function to initialize app
 function init() {}
 
 // Function call to initialize app
 // init();
-
-
-;
