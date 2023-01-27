@@ -52,8 +52,7 @@ const questions = [
 
     const generateMdContent=   ({ title, description, motivation,license,contribute,github})=>
 
-    `# ${title} \n 
-    \n---\n
+    `# ${title} \n     
     \n## Description\n    
     \n ${description}\n  
     \n---\n  
